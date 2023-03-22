@@ -1,9 +1,9 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /*Was sagt das nochmal aus?*/
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif; /*zweite Schriftart als Backup, unbegrenzte Anzahl, letzte sollte Grundschriftart sein*/
 }
 
 h1,
@@ -12,9 +12,50 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Bebas Neue", cursive;
+  font-family: "Phudu", cursive; /*selector list -> Font gilt für alle aufgelisteten Tag-Names*/
+}
+.general_header {
+  /*Class-Name*/
+  padding: 30px 450px; /*erste Zahl vertikales Padding, zweite horizontales*/
+  text-align: center;
+  background-color: #f5f3f2;
+  color: #765f4f; /*Schriftfarbe*/
+}
+.special_header {
+  padding: 20px;
+  border-width: 0, 02cm;
+  border-style: solid;
+  border-color: #ffffff;
+}
+.nav_header {
+  /*Versuch Links einzufärben, was nicht geklappt hat*/
+  [href*="Experience"] {
+    color: #765f4f;
+  }
+}
+.h1 {
+  font-size: 230%;
+}
+.footer_general {
+  padding: 30px 450px;
+  text-align: center;
+  background-color: #f5f3f2;
+  color: #765f4f;
 }
 
+header {
+}
+main {
+  padding-left: 100px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+footer {
+  padding-left: 100px;
+  margin: 0 auto;
+}
 body {
   margin: 0px;
 }
