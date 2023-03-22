@@ -6,6 +6,11 @@
   font-family: "Montserrat", sans-serif; /*zweite Schriftart als Backup, unbegrenzte Anzahl, letzte sollte Grundschriftart sein*/
 }
 
+::selection {
+  background-color: #c68aa9;
+  color: #ffffff;
+}
+
 h1,
 h2,
 h3,
@@ -24,14 +29,16 @@ h6 {
 }
 .special_header {
   padding: 20px;
-  border-width: 0, 02cm;
-  border-style: solid;
-  border-color: #ffffff;
+  border: 3px solid #ffffff; /*Hier die verkürzte Schreibweise mit der Reihenfolge width, style, color*/
 }
 
 .h1 {
   font-size: 230%;
   color: #74043f;
+}
+
+.special_header::after {
+  content: "🦁";
 }
 
 .general_link a:link {
@@ -61,7 +68,7 @@ main {
 }
 
 .article_padding {
-  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 article ~ article {
