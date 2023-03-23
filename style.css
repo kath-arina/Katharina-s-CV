@@ -60,6 +60,16 @@ nav a {
   padding: 5px;
 }
 
+.header_badge {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 3px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #74043f;
+}
+
 main {
   padding-left: 100px;
   padding-bottom: 50px;
@@ -73,6 +83,12 @@ main {
 
 article ~ article {
   border-top: 3px solid #c68aa9;
+}
+
+.article_heading {
+  display: inline-block;
+  position: relative;
+  left: -20px;
 }
 
 .experience_headline {
