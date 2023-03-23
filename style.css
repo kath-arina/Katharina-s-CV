@@ -2,7 +2,7 @@
   box-sizing: border-box; /*Hiermit wird für das gesamte Dokument, die sinnfreie default-Einstellung content-box bei allem mit border-box überschrieben*/
 }
 
-* {
+html {
   font-family: "Montserrat", sans-serif; /*zweite Schriftart als Backup, unbegrenzte Anzahl, letzte sollte Grundschriftart sein*/
 }
 
@@ -73,6 +73,15 @@ main {
 
 article ~ article {
   border-top: 3px solid #c68aa9;
+}
+
+.experience_headline {
+  display: inline;
+}
+
+.experience_subheadline {
+  display: inline-block;
+  padding-left: 15px;
 }
 
 footer {
