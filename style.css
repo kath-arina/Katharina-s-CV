@@ -4,9 +4,24 @@
 
 html {
   font-family: "Montserrat", sans-serif; /*zweite Schriftart als Backup, unbegrenzte Anzahl, letzte sollte Grundschriftart sein*/
+  font-size: 16px; /*Irgendwie klappt das Zusammenspiel mit dieser General-FOnt-Size und meinen Header-Font-Sizes nicht si richtig nur das em auf rem funktioniert*/
+}
+
+/*Responsive Design*/
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 ::selection {
+  /*was machst diese Einstellung?*/
   background-color: #c68aa9;
   color: #ffffff;
 }
@@ -22,22 +37,31 @@ h6 {
 
 .general_header {
   /*Class-Name*/
-  padding: 30px 250px; /*erste Zahl vertikales Padding, zweite horizontales*/
+  padding: 2rem 25rem; /*erste Zahl vertikales Padding, zweite horizontales*/
   text-align: center;
   background-color: #f5f3f2;
   color: #765f4f; /*Schriftfarbe*/
 }
-.special_header {
-  padding: 20px;
-  border: 3px solid #ffffff; /*Hier die verkürzte Schreibweise mit der Reihenfolge width, style, color*/
+.header_box {
+  padding: 1.5rem;
+  border: 0.25rem solid #ffffff; /*Hier die verkürzte Schreibweise mit der Reihenfolge width, style, color*/
+}
+
+.header_fontsizes {
+  /*Gesamthafte Font-Size aus Aufgabe*/
+  font-size: 18rem;
 }
 
 .h1 {
-  font-size: 230%;
+  /*Schriftgröße von der H1, 1em von header_Fontsizes*/
+  font-size: 1em;
   color: #74043f;
 }
-
-.special_header::after {
+.p_header {
+  /*Schriftgröße vom Header-Text 25% von der Header_Fontsizes*/
+  font-size: 0.25em;
+}
+.header_box::after {
   content: "🦁";
 }
 
@@ -57,38 +81,65 @@ h6 {
 }
 
 nav a {
-  padding: 5px;
+  padding: 0.4rem;
 }
 
 .header_badge {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  border-radius: 3px;
-  padding: 10px;
+  top: 1rem;
+  right: 1rem;
+  border-radius: 0.3rem;
+  padding: 0.7rem;
   color: #ffffff;
   background-color: #74043f;
 }
 
+@media screen and (min-width: 992px) {
+  /*Sollte eigentlich das Hire-Me ausblenden - funktioniert noch nicht
+  */
+  .header_badge {
+    position: fixed;
+  }
+}
+
+@media print {
+  /*Nav und Hire Me werden in Druckansicht entfernt*/
+  .header_badge {
+    display: none;
+  }
+  .nav {
+    display: none;
+  }
+}
+
 main {
-  padding-left: 100px;
-  padding-bottom: 50px;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 100ch;
 }
 
 .article_padding {
-  padding-bottom: 20px;
+  padding-bottom: 1rem; /*Abstand nach unten zum nächsten article*/
 }
 
 article ~ article {
-  border-top: 3px solid #c68aa9;
+  border-top: 0.3rem solid #c68aa9;
+  padding-top: 0.5rem; /*damit der Strich nicht so nach an der Article-Überschrift klebt*/
+}
+
+@media screen {
+  .article_padding {
+    margin-bottom: 20px;
+  }
 }
 
 .article_heading {
   display: inline-block;
   position: relative;
-  left: -20px;
+  left: -1.5rem;
 }
 
 .experience_headline {
@@ -97,7 +148,7 @@ article ~ article {
 
 .experience_subheadline {
   display: inline-block;
-  padding-left: 15px;
+  padding-left: 1rem;
 }
 
 footer {
@@ -105,12 +156,19 @@ footer {
 }
 
 .footer_general {
-  padding: 30px 250px;
-  text-align: center;
+  display: block;
+  padding: 2rem;
   background-color: #f5f3f2;
   color: #765f4f;
+  margin-inline: auto;
+}
+
+.footer_contact {
+  display: block;
+  margin-inline: auto;
+  text-align: center; /*bekomme hier die Punkte nicht in den Center & mit Margin: auto funktioniert es auch nicht*/
 }
 
 body {
-  margin: 0px;
+  margin: 0rem;
 }
