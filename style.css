@@ -1,3 +1,5 @@
+/*GENERAL*/
+
 * {
   box-sizing: border-box; /*Hiermit wird für das gesamte Dokument, die sinnfreie default-Einstellung content-box bei allem mit border-box überschrieben*/
 }
@@ -8,7 +10,7 @@ html {
 }
 
 /*Responsive Design*/
-@media screen and (min-width: 786px) {
+@media screen and (min-width: 768px) {
   html {
     font-size: 18px;
   }
@@ -35,18 +37,22 @@ h6 {
   font-family: "Phudu", cursive; /*selector list -> Font gilt für alle aufgelisteten Tag-Names*/
 }
 
+/*HEADER*/
+
 .general_header {
   /*Class-Name*/
-  padding: 2rem 25rem; /*erste Zahl vertikales Padding, zweite horizontales*/
+  padding: 2rem 8rem; /*erste Zahl vertikales Padding, zweite horizontales*/
   text-align: center;
-  background-color: #f5f3f2;
   color: #765f4f; /*Schriftfarbe*/
-}
-.header_box {
-  padding: 1.5rem;
-  border: 0.25rem solid #ffffff; /*Hier die verkürzte Schreibweise mit der Reihenfolge width, style, color*/
+  background-color: #f5f3f2;
+  background-image: linear-gradient(to right, #e8b2ce, #ffffff);
 }
 
+.header_box {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 0.25rem solid #ffffff; /*Hier die verkürzte Schreibweise mit der Reihenfolge width, style, color*/
+}
 .header_fontsizes {
   /*Gesamthafte Font-Size aus Aufgabe*/
   font-size: 18rem;
@@ -80,15 +86,29 @@ h6 {
   background-color: #c68aa9;
 }
 
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
 nav a {
-  padding: 0.4rem;
+  /*warum steht hier das a?Und warum funktioniert es ohne nicht*/
+  padding: 0.3rem;
 }
 
 .header_badge {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  border-radius: 0.3rem;
+  border-radius: 0.3rem; /*rundet die Ecken*/
   padding: 0.7rem;
   color: #ffffff;
   background-color: #74043f;
@@ -111,6 +131,8 @@ nav a {
     display: none;
   }
 }
+
+/*MAIN*/
 
 main {
   padding-left: 8rem;
@@ -144,12 +166,32 @@ article ~ article {
 
 .experience_headline {
   display: inline;
+  display: flex;
+  flex-direction: column;
 }
 
 .experience_subheadline {
   display: inline-block;
   padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
 }
+
+@media screen and (min-width: 768px) {
+  .experience_headline {
+    display: flex;
+    columns: row;
+    align-items: baseline;
+  }
+  .experience_subheadline {
+    display: flex;
+    columns: row;
+    align-items: baseline;
+    order: ;
+  }
+}
+
+/*FOOTER*/
 
 footer {
   margin: 0 auto;
@@ -159,8 +201,15 @@ footer {
   display: block;
   padding: 2rem;
   background-color: #f5f3f2;
-  color: #765f4f;
+  color: #f5f3f2;
   margin-inline: auto;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 59, 6, 1) 0%,
+    rgba(255, 98, 0, 1) 30%,
+    rgba(179, 0, 255, 1) 94%
+  );
 }
 
 .footer_contact {
