@@ -23,7 +23,7 @@ html {
 }
 
 ::selection {
-  /*was machst diese Einstellung?*/
+  /*Stell die Farben ein, die der Text & Hintergrund bekommen soll, wenn man ihn markiert/auswählt */
   background-color: #c68aa9;
   color: #ffffff;
 }
@@ -36,6 +36,22 @@ h5,
 h6 {
   font-family: "Phudu", cursive; /*selector list -> Font gilt für alle aufgelisteten Tag-Names*/
 }
+/*BODY General*/
+body {
+  --Theme-USP-Color: #74043f;
+  --Theme-light-color: #c68aa9;
+  --brownish-Font-Color: #765f4f;
+  --theme-default-background: #f5f3f2;
+  --theme-used-background: #ffffff;
+  --theme-default-font-color: #000000;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    --theme-used-background: #1d1318;
+    --theme-default-font-color: #f5f3f2;
+  }
+}
 
 /*HEADER*/
 
@@ -43,7 +59,7 @@ h6 {
   /*Class-Name*/
   padding: 2rem 8rem; /*erste Zahl vertikales Padding, zweite horizontales*/
   text-align: center;
-  color: #765f4f; /*Schriftfarbe*/
+  color: var(--brownish-Font-Color); /*Schriftfarbe*/
   background-color: #f5f3f2;
   background-image: linear-gradient(to right, #e8b2ce, #ffffff);
 }
@@ -61,7 +77,7 @@ h6 {
 .h1 {
   /*Schriftgröße von der H1, 1em von header_Fontsizes*/
   font-size: 1em;
-  color: #74043f;
+  color: var(--Theme-USP-Color);
 }
 .p_header {
   /*Schriftgröße vom Header-Text 25% von der Header_Fontsizes*/
@@ -73,17 +89,18 @@ h6 {
 
 .general_link a:link {
   /*folgende 3 Classes sind zur Style-Anpassung der Links: 1. Farbe, 2. Farbwechsel nach Besuch, 3. HIntergrundfarbe ändert sich beim drüber hovern*/
-  color: #765f4f;
+  color: var(--brownish-Font-Color);
+  transition: 0.5s ease-in-out; /*Hintergrundfarbe der Links wird langsamer eingeblendet*/
 }
 .general_link a:visited {
-  color: #74043f;
+  color: var(--Theme-USP-Color);
 }
 .general_link a:hover {
   /*hover muss immer vor active stehen, weil hovern passiert rein technisch immer auch gleichzeitig noch wenn man klickt, in diesem Fall überspielt der nachgelagerte Befehl den vorherigen*/
   background-color: #ffffff;
 }
 .general_link a:active {
-  background-color: #c68aa9;
+  background-color: var(--Theme-light-color);
 }
 
 .navigation {
@@ -111,7 +128,7 @@ nav a {
   border-radius: 0.3rem; /*rundet die Ecken*/
   padding: 0.7rem;
   color: #ffffff;
-  background-color: #74043f;
+  background-color: var(--Theme-USP-Color);
 }
 
 @media screen and (min-width: 992px) {
@@ -148,7 +165,7 @@ main {
 }
 
 article ~ article {
-  border-top: 0.3rem solid #c68aa9;
+  border-top: 0.3rem solid var(--Theme-light-color);
   padding-top: 0.5rem; /*damit der Strich nicht so nach an der Article-Überschrift klebt*/
 }
 
@@ -200,7 +217,7 @@ footer {
 .footer_general {
   display: block;
   padding: 2rem;
-  background-color: #f5f3f2;
+  background-color: var(--theme-default-background);
   color: #f5f3f2;
   margin-inline: auto;
   background: rgb(255, 255, 255);
